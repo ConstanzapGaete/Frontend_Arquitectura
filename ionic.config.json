@@ -1,0 +1,7 @@
+{
+  "name": "frontend_FixFinder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
