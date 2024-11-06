@@ -3,40 +3,45 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
-  },  {
+    pathMatch: 'full',
+  },
+  {
     path: 'login',
-    loadChildren: () => import('./Pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./Pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'home',
-    loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./Pages/home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: 'e404',
-    loadChildren: () => import('./Pages/e404/e404.module').then( m => m.E404PageModule)
+    loadChildren: () =>
+      import('./Pages/e404/e404.module').then((m) => m.E404PageModule),
   },
   {
     path: 'registrar',
-    loadChildren: () => import('./Pages/registrar/registrar.module').then( m => m.RegistrarPageModule)
+    loadChildren: () =>
+      import('./Pages/registrar/registrar.module').then(
+        (m) => m.RegistrarPageModule
+      ),
   },
   {
     path: 'olvidacontrase',
-    loadChildren: () => import('./Pages/olvidacontrase/olvidacontrase.module').then( m => m.OlvidacontrasePageModule)
+    loadChildren: () =>
+      import('./Pages/olvidacontrase/olvidacontrase.module').then(
+        (m) => m.OlvidacontrasePageModule
+      ),
   },
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
