@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { SignUpPageModule } from './Pages/authen/sign-up/sign-up.module';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'authen',
     pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./Pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'home',
@@ -22,17 +18,10 @@ const routes: Routes = [
       import('./Pages/e404/e404.module').then((m) => m.E404PageModule),
   },
   {
-    path: 'registrar',
+    path: 'authen',
     loadChildren: () =>
-      import('./Pages/registrar/registrar.module').then(
-        (m) => m.RegistrarPageModule
-      ),
-  },
-  {
-    path: 'olvidacontrase',
-    loadChildren: () =>
-      import('./Pages/olvidacontrase/olvidacontrase.module').then(
-        (m) => m.OlvidacontrasePageModule
+      import('./Pages/authen/authen.module').then(
+        (m) => m.AuthenPageModule
       ),
   },
 ];
