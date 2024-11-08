@@ -1,0 +1,95 @@
+
+ion-content {
+    --background: #f3f4f8;
+  }
+  
+
+  .custom-searchbar {
+    --background: rgba(255, 255, 255, 0.9);
+    --placeholder-color: #888;
+    border-radius: 20px;
+    max-width: 90%;
+    margin-top: 16px;
+  }
+  
+
+  .welcome-message h2 {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+  }
+  
+
+  .help-button, .profile-button, .logout-button {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .help-button {
+    color: #0066cc;
+  }
+  
+  .profile-button, .logout-button {
+    color: #0066cc;
+  }
+  
+
+  .category-card {
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    --background: #555; 
+  }
+  
+
+  .gasfiteria {
+    --background: #ff8c00;
+  }
+  
+  .jardineria {
+    --background: #32cd32;
+  }
+  
+  .cerrajeria {
+    --background: #1e90ff;
+  }
+  
+  .albanileria {
+    --background: #8b4513;
+  }
+  
+
+  ion-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+ .search-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 16px;
+  max-width: 90%; 
+}
+
+
+.search-input {
+  --background: rgba(255, 255, 255, 0.9);
+  height: 40px; 
+  font-size: 14px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0 10px;
+  flex: 1; 
+}
+
+
+.search-button {
+  height: 40px; 
+  font-size: 14px;
+  width: 80px;
+  --background: #0078d7;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
