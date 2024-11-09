@@ -24,6 +24,11 @@ const routes: Routes = [
         (m) => m.AuthenPageModule
       ),
   },
+  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
