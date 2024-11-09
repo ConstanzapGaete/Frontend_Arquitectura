@@ -25,7 +25,7 @@ export class HomePage {
 
   cerrarSesion() {
     console.log('Cerrando sesión');
-    //this.navCtrl.navigateRoot('/login');
+    this.navCtrl.navigateRoot('/authen');
   }
 
 
