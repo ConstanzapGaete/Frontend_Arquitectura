@@ -25,10 +25,15 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'homep',
+    loadChildren: () => import('./Pages/homep/homep.module').then( m => m.HomepPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full',
   },
+
 ];
 
 @NgModule({

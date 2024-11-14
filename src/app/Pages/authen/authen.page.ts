@@ -8,19 +8,31 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthenPage implements OnInit {
 
-  form = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email]),
-    password: new FormControl('',[Validators.required])
+  selectedUserType: string = 'cliente'; 
 
-  })
+  formCliente = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
 
-  constructor() { }
+  formProfesional = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  segmentChanged(event: any) {
+    this.selectedUserType = event.detail.value;
   }
 
-  submit(){
-    console.log(this.form.value);
+  submit(userType: string) {
+    const form = userType === 'cliente' ? this.formCliente : this.formProfesional;
+    if (form.valid) {
+      console.log(`Iniciando sesión como ${userType}`, form.value);
+      
+    }
   }
-
 }
