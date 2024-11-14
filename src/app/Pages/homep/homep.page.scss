@@ -1,0 +1,31 @@
+ion-content {
+    --background: #f3f4f6;
+    padding-top: 10px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 16px;
+  }
+  
+  .welcome-container {
+    text-align: center;
+    margin-top: 40px;
+    color: #333;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+  }
+  
+  .button-with-icon {
+    display: flex;
+    align-items: center;
+    --border-radius: 8px;
+    width: 48%;
+    justify-content: center;
+  }
+  

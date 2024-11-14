@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="header-buttons">
+    <ion-button fill="clear" (click)="verPerfil()" style="color: #007bff;">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      Perfil
+    </ion-button>
+    <ion-button fill="clear" (click)="cerrarSesion()" style="color: #007bff;">
+      <ion-icon name="log-out-outline"></ion-icon>
+      Cerrar sesión
+    </ion-button>
+  </div>
+
+  <div class="welcome-container">
+    <h1>Gestiona tus servicios con facilidad.</h1>
+  </div>
+
+  <div class="action-buttons">
+    <ion-button color="primary" (click)="verServicios()" class="button-with-icon">
+      <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+      Mis Servicios
+    </ion-button>
+    <ion-button color="secondary" (click)="verCalificaciones()" class="button-with-icon">
+      <ion-icon name="star-outline" slot="start"></ion-icon>
+      Calificación de Servicio
+    </ion-button>
+  </div>
+</ion-content>

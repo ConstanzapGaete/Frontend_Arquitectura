@@ -1,52 +1,108 @@
-<app-header [title]="'FixFinder'"></app-header>
-
 <ion-content>
 
-<div class="d-flex-center">
-    <form [formGroup]="form" class="authen-form" (ngSubmit)="submit()"(keypress.enter)="submit()">
+  <div class="d-flex-center">
 
-        <app-logo></app-logo>
+   
+    <div class="logo-container">
+        <img src="assets/img/fix.PNG" alt="FixFinder Logo" class="app-logo"/>
+      </div>
 
-        <app-custom-input 
-            autocomplete="email"
-            icon="mail-outline"
-            [control]="form.controls.email"
-            type="email"
-            label="correo"
-        ></app-custom-input>
 
-        <div class="Validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
-            <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
-            <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
-        </div>
+    <ion-segment [(ngModel)]="selectedUserType" (ionChange)="segmentChanged($event)" value="cliente">
+        <ion-segment-button value="cliente">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-label>Cliente</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="profesional">
+          <ion-icon name="briefcase-outline"></ion-icon>
+          <ion-label>Profesional</ion-label>
+        </ion-segment-button>
+      </ion-segment>
 
-        <app-custom-input 
-            [control]="form.controls.password"
-            icon="lock-closed-outline"
-            type="password"
-            label="contraseña"
-        ></app-custom-input>
 
-        <div class="Validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
-            <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
-        </div>
+    <form *ngIf="selectedUserType === 'cliente'" [formGroup]="formCliente" class="authen-form" (ngSubmit)="submit('cliente')">
+      
+      <app-custom-input 
+          autocomplete="email"
+          icon="mail-outline"
+          [control]="formCliente.controls.email"
+          type="email"
+          label="Correo Cliente"
+      ></app-custom-input>
 
-        <a routerLink="forgot-password" class="ion-text-end" style="text-decoration: none; color: var(--ion-color-primary);">
-            ¿Olvidaste tu contraseña?
-          </a>
+      <div class="Validators" *ngIf="formCliente.controls.email.errors && formCliente.controls.email.touched">
+          <div *ngIf="formCliente.controls.email.errors?.['required']">El correo es requerido</div>
+          <div *ngIf="formCliente.controls.email.errors?.['email']">Ingrese un correo válido</div>
+      </div>
 
-        <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
-            Ingresar
-            <ion-icon slot="end" name="log-in-outline"></ion-icon>
-        </ion-button>
+      <app-custom-input 
+          [control]="formCliente.controls.password"
+          icon="lock-closed-outline"
+          type="password"
+          label="Contraseña Cliente"
+      ></app-custom-input>
 
-        <ion-button class="ion-margin-top" routerLink="sign-up" expand="block" mode="ios" fill="outline">
-            Regístrate
-            <ion-icon slot="end" name="person-add-outline"></ion-icon>
-        </ion-button>
+      <div class="Validators" *ngIf="formCliente.controls.password.errors && formCliente.controls.password.touched">
+          <div *ngIf="formCliente.controls.password.errors?.['required']">La contraseña es requerida</div>
+      </div>
 
+      <a routerLink="forgot-password" class="ion-text-end forgot-password-link">
+          ¿Olvidaste tu contraseña?
+      </a>
+
+      <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="formCliente.invalid">
+          Ingresar
+          <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="ion-margin-top" routerLink="sign-up" expand="block" mode="ios" fill="outline">
+          Regístrate
+          <ion-icon slot="end" name="person-add-outline"></ion-icon>
+      </ion-button>
     </form>
 
-</div>
+
+    <form *ngIf="selectedUserType === 'profesional'" [formGroup]="formProfesional" class="authen-form" (ngSubmit)="submit('profesional')">
+      
+      <app-custom-input 
+          autocomplete="email"
+          icon="mail-outline"
+          [control]="formProfesional.controls.email"
+          type="email"
+          label="Correo Profesional"
+      ></app-custom-input>
+
+      <div class="Validators" *ngIf="formProfesional.controls.email.errors && formProfesional.controls.email.touched">
+          <div *ngIf="formProfesional.controls.email.errors?.['required']">El correo es requerido</div>
+          <div *ngIf="formProfesional.controls.email.errors?.['email']">Ingrese un correo válido</div>
+      </div>
+
+      <app-custom-input 
+          [control]="formProfesional.controls.password"
+          icon="lock-closed-outline"
+          type="password"
+          label="Contraseña Profesional"
+      ></app-custom-input>
+
+      <div class="Validators" *ngIf="formProfesional.controls.password.errors && formProfesional.controls.password.touched">
+          <div *ngIf="formProfesional.controls.password.errors?.['required']">La contraseña es requerida</div>
+      </div>
+
+      <a routerLink="forgot-password" class="ion-text-end forgot-password-link">
+          ¿Olvidaste tu contraseña?
+      </a>
+
+      <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="formProfesional.invalid">
+          Ingresar
+          <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="ion-margin-top" routerLink="sign-up-profesional" expand="block" mode="ios" fill="outline">
+          Regístrate
+          <ion-icon slot="end" name="person-add-outline"></ion-icon>
+      </ion-button>
+    </form>
+
+  </div>
 
 </ion-content>
