@@ -29,10 +29,22 @@ const routes: Routes = [
     loadChildren: () => import('./Pages/homep/homep.module').then( m => m.HomepPageModule)
   },
   {
+    path: 'gasfiteria',
+    loadChildren: () => import('./Pages/gasfiteria/gasfiteria.module').then( m => m.GasfiteriaPageModule)
+  },
+  {
+    path: 'jardineria',
+    loadChildren: () => import('./Pages/jardineria/jardineria.module').then( m => m.JardineriaPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full',
   },
+  
+
+ 
+
 
 ];
 

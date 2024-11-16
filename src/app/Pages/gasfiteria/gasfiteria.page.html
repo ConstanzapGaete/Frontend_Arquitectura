@@ -1,0 +1,49 @@
+<ion-content>
+  <div class="header-buttons">
+    <ion-button fill="clear" (click)="irHome()" color="primary">
+      Home
+    </ion-button>
+    <ion-button fill="clear" (click)="irPerfil()" color="primary">
+      Perfil
+    </ion-button>
+    <ion-button fill="clear" (click)="cerrarSesion()" color="primary">
+      Cerrar sesión
+    </ion-button>
+  </div>
+
+  <div class="title-container">
+    <ion-title size="large" style="text-align: center; font-size: 32px; font-weight: bold;">
+      Gasfitería
+    </ion-title>
+  </div>
+
+  <ion-list>
+    <ion-card button (click)="contactar(profesional.name)" *ngFor="let profesional of profesionales">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="profesional.profilePicture" alt="{{ profesional.name }}">
+        </ion-avatar>
+        <ion-label>
+          <ion-text color="dark">
+            <h2 style="font-size: 1.2rem; font-weight: bold;">{{ profesional.name }}</h2>
+          </ion-text>
+          <ion-text color="medium">
+            <h3 style="font-size: 1rem;">{{ profesional.experience }}</h3>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+
+      <ion-card-content>
+        <ion-text>
+          <p style="font-size: 1rem; line-height: 1.5;">{{ profesional.description }}</p>
+        </ion-text>
+        <ion-item lines="none">
+          <ion-icon name="star" color="warning"></ion-icon>
+          <ion-label>
+            <ion-text color="dark">{{ profesional.rating }} / 5</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
