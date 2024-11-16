@@ -37,4 +37,10 @@ export class HomePage {
     console.log('Botón de buscar presionado');
     
   }
+  Gasfiteria() {
+    this.navCtrl.navigateForward('/gasfiteria');
+  }
+  Jardineria() {
+    this.navCtrl.navigateForward('/jardineria');
+  }
 }

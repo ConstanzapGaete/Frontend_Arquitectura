@@ -1,31 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar >
-    
-    <ion-buttons slot="start">
-      <ion-button (click)="necesitasAyuda()" class="help-button">
-        ¿Necesitas ayuda?
-      </ion-button>
-    </ion-buttons>
-
-
-    <ion-buttons slot="end">
-      <ion-button (click)="irPerfil()" class="profile-button">
+<ion-content>
+  <div class="header-buttons">
+    <ion-button fill="clear" (click)="necesitasAyuda()" class="help-button">
+      ¿Necesitas ayuda?
+    </ion-button>
+    <div class="right-buttons">
+      <ion-button fill="clear" (click)="irPerfil()" class="header-button">
         Perfil
       </ion-button>
-      <ion-button (click)="cerrarSesion()" class="logout-button">
+      <ion-button fill="clear" (click)="cerrarSesion()" class="header-button">
         Cerrar sesión
       </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-  <div class="welcome-message">
-    <h2>Bienvenido</h2>
+    </div>
   </div>
 
- 
+  <div class="welcome-container">
+    <h1>Bienvenido</h1>
+    <p>Encuentra el servicio que necesitas de manera rápida y sencilla.</p>
+  </div>
+
   <div class="search-bar-container">
     <ion-input type="text" placeholder="Busca el servicio que necesitas" class="search-input"></ion-input>
     <ion-button color="primary" class="search-button" (click)="buscarServicio()">Buscar</ion-button>
@@ -34,7 +26,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <ion-card button (click)="verServicios('gasfiteria')" class="category-card gasfiteria">
+        <ion-card button (click)="Gasfiteria()" class="category-card gasfiteria">
           <ion-card-header>
             <ion-card-title>Gasfitería</ion-card-title>
           </ion-card-header>
@@ -43,9 +35,8 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-
       <ion-col size="6">
-        <ion-card button (click)="verServicios('jardineria')" class="category-card jardineria">
+        <ion-card button (click)="Jardineria()" class="category-card jardineria">
           <ion-card-header>
             <ion-card-title>Jardinería</ion-card-title>
           </ion-card-header>
@@ -55,7 +46,6 @@
         </ion-card>
       </ion-col>
     </ion-row>
-
     <ion-row>
       <ion-col size="6">
         <ion-card button (click)="verServicios('cerrajeria')" class="category-card cerrajeria">
@@ -67,7 +57,6 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-
       <ion-col size="6">
         <ion-card button (click)="verServicios('albanileria')" class="category-card albanileria">
           <ion-card-header>
